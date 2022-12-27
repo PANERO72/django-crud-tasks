@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="col-md-6 justify-content-center mx-auto mt-5 h-781" id="create-task-page">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4 class="card-title">Crear Tarea</h4>
+            </div>
+            <div class="card-body bg-light py-4 px-4">
+                <form action="/create_task/" method="post">
+                    {% csrf_token %}
+                    <div class="form-outline mb-4">
+                        {{form.title.label_tag}}
+                        {{form.title}}
+                    </div>
+                    <div class="form-outline mb-4">
+                        {{form.description.label_tag}}
+                        {{form.description}}
+                    </div>
+                    <div class="form-outline mb-4">
+                        {{form.important.label_tag}}
+                        {{form.important}}
+                    </div>
+                    <div class="form-outline">
+                        <button class="btn btn-primary" type="submit">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

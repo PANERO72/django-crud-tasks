@@ -1,0 +1,151 @@
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.bg-text-gray {
+    color: rgb(155, 155, 155);
+}
+
+.navbar-brand{
+  font-weight: bolder;
+}
+
+.nav-link.active {
+  border-radius: 4px;
+  background-color: rgb(219, 216, 212);
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: rgba(0, 0, 0, 1) !important;
+  background-color: rgb(219, 216, 212);
+  border-radius: 4px;
+}
+.pp-7 {
+  padding: 0.10rem !important;
+}
+.w-150 {
+  width: 150px !important;
+}
+
+.w-10 {
+  width: 10%;
+  margin-left: 5px;
+}
+
+.w-12 {
+  width: 12%;
+  margin-left: 5px;
+}
+
+.w-40 {
+  width: 40%;
+}
+.w-70 {
+  width: 70%;
+}
+.wd-90 {
+  width: 90px;
+}
+
+.wd-100 {
+  width: 100px;
+}
+
+.wd-112 {
+  width: 112px;
+}
+
+.w-645 {
+  width: 645px;
+}
+
+.w-700 {
+  max-width: 700px !important;
+}
+.w-1600 {
+  width: 1600px !important;
+  
+}
+
+.w-1700 {
+  width: 1700px !important;
+  
+}
+
+.h-781 {
+  height: 781px;
+}
+
+.h-800 {
+  height: 800px;
+}
+.hh-100 {
+  height: 100%;
+}
+
+.fs-7 {
+  font-size: 0.8rem !important;
+}
+
+.ms-6 {
+  margin-left: 6rem !important;
+}
+.ml-auto {
+  margin-left: auto !important;
+  margin-right: 0px;
+}
+.mt-6 {
+  margin-top: 6.5rem !important;
+}
+.mt-7 {
+  margin-top: 5rem !important;
+}
+.resize-none {
+  resize: none;
+}
+/*******************************************/
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: 0.3rem;
+  }
+  
+  @media (min-width: 576px) {
+    .jumbotron {
+      padding: 4rem 2rem;
+    }
+  }
+  
+  .jumbotron-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+  }
+/*******************************************/
+
+footer {
+  margin:  0px 0px 0px 0px;
+  padding: 15px 0px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+footer p {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+}
+
+/***********************************************/
+
+@media (min-width: 1600px){
+
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1600px;
+  }
+}

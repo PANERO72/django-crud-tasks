@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="mt-5" id="tasks-page">
+        <h2>Tareas</h2>
+        <div class="table-responsive-lg">
+            <table class="table align-middle table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Fecha creación</th>
+                        <th>Completada - Fecha</th>
+                        <th>Importante</th>
+                        <th>Usuario</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                {% if tasks %}
+                    <tbody class="" id="tasks-list-complete">
+                        {% for task in tasks %}
+                        <tr class="{% if task.datecompleted|safe != 'None' %} bg-text-gray {% endif %}">
+                            <td class="w-10" scope="row">{{ task.title|safe }}</td>
+                            <td class="w-50">{{ task.description|safe }}</td>
+                            <td>{{ task.created|date:'d/m/Y H:i' }}</td>
+                            {% if task.datecompleted|safe == 'None' %}
+                                <td>No | ---</td>
+                            {% else %}
+                                <td>Sí | {{ task.datecompleted|date:'d/m/Y H:i' }}</td>
+                            {% endif %}
+                            {% if task.important %}
+                                <td class="ps-4">Sí</td>
+                            {% else %}
+                                <td class="ps-4">No</td>
+                            {% endif %}   
+                                <td>{{ task.user|safe }}</td>
+                            {% if task.datecompleted|safe == 'None' %}
+                                <td><a href="{% url 'task_details' task.id %}" class="btn btn-primary p-1"><i class="fa-regular fa-pen-to-square"></i></a> | <a href="{% url 'delete_task' task.id %}" class="btn btn-danger p-1" data-task="delete"><i class="fa-solid fa-trash-can-xmark"></i></a></td>
+                            {% else %}
+                                <td><span class="btn btn-primary disabled p-1"><i class="fa-regular fa-pen-to-square"></i></span> | <a href="{% url 'delete_task' task.id %}" data-task="delete" class="btn btn-danger p-1"><i class="fa-solid fa-trash-can-xmark"></i></a></td>
+                            {% endif %}
+                        </tr> 
+                    {% endfor %}  
+                    </tbody>
+                {% else %} 
+                    <tbody id="tasks-list-empty">
+                        <tr><td colspan="8">No hay tareas agragadas todavía</td></tr>
+                    </tbody>
+                {% endif %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

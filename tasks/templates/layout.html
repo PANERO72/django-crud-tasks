@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>App de Tareas en Django</title>
+        {% load static %}
+        <!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" /> -->
+        <!-- <link type="image/png" sizes="16x16" rel="icon" href="img/favicon/favicon--16.png" /> -->
+        <!-- <link type="image/png" sizes="32x32" rel="icon" href="img/favicon/favicon-32.png" /> -->
+        <link type="image/png" sizes="96x96" rel="icon" href="{% static 'images/favicon/favicon-96.png' %}" />
+        <link rel="stylesheet" href="{% static '/css/sweetalert2.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static '/bootstrap-5.3.0/css/bootstrap.css' %}" type="text/css"/>
+        <link rel="stylesheet" href="{% static '/fontawesome-pro-6.2.1/css/all.css' %}"type="text/css" />
+        <link rel="stylesheet" href="{% static '/css/styles.css' %}" type="text/css" />
+    </head>
+    <body>
+        <div class="container-fluid px-0">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark bg-opacity-10 px-4 clearfix">
+                    <div class="container-fluid">
+                        <a class="navbar-brand">App de Tareas en Django</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-item nav-link" id="index-link" href="/">Inicio</a>
+                                {% if user.is_authenticated %}
+                                    <a class="nav-item nav-link" id="tasks-link" href="/tasks">Tareas</a>
+                                    <a class="nav-item nav-link" id="create-task-link" href="/create_task">Crear Tarea</a>
+                                    <a class="nav-item nav-link" id="logout-link" href="/logout">Cerrar Sesión</a>
+                                {% else %}
+                                    <a class="nav-item nav-link" id="login-link" href="/login">Iniciar de Sesión</a>
+                                {% endif %}
+                                
+                            </div>
+                        </div>
+                        {% if user.is_authenticated %}
+                        <div class="dropdown ml-auto">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{% static '/images/user_image.png' %}" width="25" alt="Imagen del Usuario" class="img-responsive" />
+                                {{user}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end">
+                                <li><span class="dropdown-item-text">{{user.email}}</span></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Ver perfil...</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </nav>
+            </header>
+            <div class="container-fluid w-1700">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <footer class="container-fluid bg-dark bg-opacity-10">
+                <p>&copy;2022 - App de Tareas en Django | Todos los derechos reservados.</p>
+            </footer>
+        </div>
+
+        {% load static %}
+        <script src="{% static '/js/popper.min.js' %}" type="text/javascript"></script>
+        <script src="{% static '/bootstrap-5.3.0/js/bootstrap.js' %}" type="text/javascript"></script>
+        <script src="{% static '/fontawesome-pro-6.2.1/js/all.js' %}" type="text/javascript"></script>
+        <script src="{% static '/js/sweetalert2.all.min.js' %}" type="text/javascript"></script>
+        <script src="{% static '/js/main.js' %}" type="text/javascript"></script>
+
+        <!-- {% load sweetify %} -->
+        <!-- {% sweetify %} -->
+        {% include "sweetalert2/sweetalert2.html" %}
+    </body>
+</html>

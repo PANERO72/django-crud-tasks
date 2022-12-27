@@ -1,0 +1,46 @@
+   <!-- Begin alerts -->                
+   {% with messages = get_flashed_messages(with_categories=true) %}
+   {% if messages %}
+   {% for category, message in messages %}
+   <script>
+
+       console.log();
+
+       if(`{{category.title()}} === 'success'`) {
+         var titulo = "¡Éxito!";
+         var icono = 'success';
+       }
+       else if (`{{category.title()}} === 'error'`) {
+          var titulo = "¡Error!";
+          var icono = 'error';
+              
+       } else if (`{{category.title()}} === 'warning'`) {
+          var titulo = "¡Advertencia!";
+          var icono = 'warning';
+              
+       }else if (`{{category.title()}} === 'info'`) {
+          var titulo = "Informarción!";
+          var icono = 'info';
+       }
+      
+   Swal.fire({
+
+          title: titulo,
+          // success , error , warning ,info
+
+          text: "{{ message }}",
+          // Custom message flashed from your flask routes
+
+          icon: "{{ category }}" == "danger" ? "error" : icono,
+          // success , error , warning ,info
+
+          confirmButtonText: "Aceptar"
+
+   })
+
+   </script>
+   {% endfor %}
+   {% endif %}
+   {% endwith %}
+
+   <!-- End alerts -->

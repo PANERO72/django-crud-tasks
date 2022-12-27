@@ -1,0 +1,54 @@
+<!-- sweetAlert2 -->
+<!-- Generamos una nueva variable de messages con sweetalert2 -->
+
+{% if messages %}
+	{% for message in messages %}
+		{% if message.tags %}
+			{% if message.tags == 'error' %}
+			<script>
+				Swal.fire({
+					position: 'center',
+					title: '¡Error!',
+					icon: 'error',
+					text: "{{message}}",
+					showConfirmButton: true,
+					confirmButtonText: 'Aceptar'
+				});
+			</script>
+			{% elif message.tags == 'warning' %}
+			<script>
+				Swal.fire({
+					position: 'center',
+					title: '¡Advertencia!',
+					icon: 'warning',
+					text: "{{message}}",
+					showConfirmButton: true,
+					confirmButtonText: 'Aceptar'
+				});
+			</script>
+			{% elif message.tags == 'success' %}
+			<script>
+				Swal.fire({
+					position: 'center',
+					title: '¡Éxito!',
+					icon: 'success',
+					text: "{{message}}",
+					showConfirmButton: true,
+					confirmButtonText: 'Aceptar'
+				});
+			</script>
+			{% elif message.tags == 'info' %}
+			<script>
+				Swal.fire({
+					position: 'center',
+					title: '¡Información!',
+					icon: 'info',
+					text: "{{message}}",
+					showConfirmButton: true,
+					confirmButtonText: 'Aceptar'
+				});
+			</script>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+{% endif %}

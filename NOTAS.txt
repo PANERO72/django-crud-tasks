@@ -1,0 +1,26 @@
+*** ESTE PROYECTO DE PYTHON ESTÁ BASADO EN DJANGO Y ES DEL CANAL 'FAZT' DE YOUTUBE ***
+
+*** SEGUIR EN MINUTO: 2:47:58 DEL VÍDEO => https://www.youtube.com/watch?v=e6PkGDH4wWA ***
+
+*** MIRAR DE INCLUIR LA LIBRERÍA 'SWEETALERT2' Y DE ESTILOS CSS ***
+
+*** DATOS DEL USUARIO REGISTRADO EN LA APP DE TAREAS:
+
+    - NOMBRE USUARIO:  PANI72
+    - CONTRASEÑA :     1972Panero@
+
+    * No hay correo electrónico registrado.
+
+*** DATOS DE ACCeSO AL PANEL DE ADMINISTRACIÓN DE DJANGO (SUPERUSUARIO):
+
+    - NOMBRE USUARIO:     josepanero
+    - CORREO ELECTRÓNICO: panerootero@gmail.com
+    - CONTRASEÑA :        1972Panero@
+
+    * Para abrir el panel de administración hay que ejecutar proyecto y en la pestana del navegador en la que se abre el proyecto escribir los siguiente:
+
+       - 127.0.0.1:8000/admin/
+
+***
+
+*** EL PROYECTO SE HA DESPLEGADO O ALOJADO EN 'RENDER' => https://render.com/ LOS DATOS DE ACCESO SON ATRAVÉS DE MI CUENTA DE 'GITHUB'  ***

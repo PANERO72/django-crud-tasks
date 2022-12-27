@@ -1,0 +1,28 @@
+{% extends 'layout_login_register.html' %}
+
+{% block content %}
+    <div class="col-md-4 justify-content-center mx-auto mt-6 h-781" id="login-page">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title text-center">Inicio de Sesión</h4>
+            </div>
+            <div class="card-body bg-light p-4">
+                <form action="/login/" method="post" id="login-form">
+                    {% csrf_token %}
+                    <div class="form-outline mb-4">
+                        {{form.username.label_tag}}
+                        {{form.username}}
+                    </div>
+                    <div class="form-outline mb-4">
+                        {{form.password.label_tag}}
+                        {{form.password}}
+                    </div>
+                    <div class="form-outline mb-4">
+                        <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
+                    </div>
+                </form>
+                <div>¿Aún no tiene una cuenta? <a href="/register">Registro</a></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
