@@ -13,9 +13,9 @@
 
 *** DATOS DE ACCeSO AL PANEL DE ADMINISTRACIÓN DE DJANGO (SUPERUSUARIO):
 
-    - NOMBRE USUARIO:     josepanero
+    - NOMBRE USUARIO:     admin
     - CORREO ELECTRÓNICO: panerootero@gmail.com
-    - CONTRASEÑA :        1972Panero@
+    - CONTRASEÑA :        1972Panero1972@
 
     * Para abrir el panel de administración hay que ejecutar proyecto y en la pestana del navegador en la que se abre el proyecto escribir los siguiente:
 
