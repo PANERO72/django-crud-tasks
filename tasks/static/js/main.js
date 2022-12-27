@@ -8,6 +8,7 @@ const tasksLink = document.getElementById("tasks-link");
 const createTaskLink = document.getElementById("create-task-link");
 const logoutLink = document.getElementById("logout-link");
 const loginLink = document.getElementById("login-link");
+const adminLink = document.getElementById('admin-link');
 
 const tasksListComplete = document.getElementById("tasks-list-complete");
 const tasksListEmpty = document.getElementById("tasks-list-empty");
@@ -65,11 +66,15 @@ const elementsLabels = document.querySelectorAll('label[for^="id_"]');
 			if (loginLink.classList.contains('active')) {
 				loginLink.classList().remove('active');
 			}
+		}if(adminLink.classList.contains('active')){
+			adminLink.classList().remove('active');
 		}
 
 		tasksLink.removeAttribute('aria-current');
 		createTaskLink.removeAttribute('aria-current');
 		logoutLink.removeAttribute('aria-current');
+		adminLink.removeAttribute('aria-current');
+
 		if(loginLink){
 			loginLink.removeAttribute('aria-current');
 		}
@@ -89,6 +94,9 @@ const elementsLabels = document.querySelectorAll('label[for^="id_"]');
 		if (logoutLink.classList.contains('active')) {
 			logoutLink.classList().remove('active');
 		}
+		if(adminLink.classList.contains('active')){
+			adminLink.classList().remove('active');
+		}
 		if (loginLink) {
 			
 			if (loginLink.classList.contains('active')) {
@@ -99,6 +107,8 @@ const elementsLabels = document.querySelectorAll('label[for^="id_"]');
 		indexLink.removeAttribute('aria-current');
 		createTaskLink.removeAttribute('aria-current');
 		logoutLink.removeAttribute('aria-current');
+		adminLink.removeAttribute('aria-current');
+
 		if(loginLink){
 
 			loginLink.removeAttribute('aria-current');
@@ -128,6 +138,9 @@ const elementsLabels = document.querySelectorAll('label[for^="id_"]');
 		if (logoutLink.classList.contains('active')) {
 			logoutLink.classList().remove('active');
 		}
+		if(adminLink.classList.contains('active')){
+			adminLink.classList.remove('active');
+		}
 		if (loginLink) {
 			
 			if (loginLink.classList.contains('active')) {
@@ -138,6 +151,8 @@ const elementsLabels = document.querySelectorAll('label[for^="id_"]');
 		indexLink.removeAttribute('aria-current');
 		tasksLink.removeAttribute('aria-current');
 		logoutLink.removeAttribute('aria-current');
+		adminLink.removeAttribute('aria-current');
+		
 		if(loginLink){
 
 			loginLink.removeAttribute('aria-current');
